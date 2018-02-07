@@ -48,7 +48,7 @@ with tf.name_scope("train"):
 	optimizer = tf.train.GradientDescentOptimizer(learning_rate)
 	training_op = optimizer.minimize(loss)
 
-# Specifying how to evaluate the model - accuracy
+# Specify how to evaluate the model - accuracy
 with tf.name_scope("eval"):
 	correct = tf.nn.in_top_k(logits, y, 1) # correct is a boolean array of size #batch_size#
 	accuracy = tf.reduce_mean(tf.cast(correct, tf.float32))
